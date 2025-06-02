@@ -1,6 +1,5 @@
 ###cloud vars
 
-
 variable "cloud_id" {
   type        = string
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
@@ -13,7 +12,7 @@ variable "folder_id" {
 
 variable "default_zone" {
   type        = string
-  default     = "ru-central1-a"
+  default     = "ru-central1-d"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
 }
 variable "default_cidr" {
@@ -28,11 +27,10 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
-
 ###ssh vars
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHYMl6i1/RbSwM3vsYIkgYPo+wrPcxc2aZ1AODdCqTPM root@dio-mainpc"
   description = "ssh-keygen -t ed25519"
 }
