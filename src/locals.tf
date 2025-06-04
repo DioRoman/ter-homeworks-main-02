@@ -1,6 +1,6 @@
 locals {
 
-  VM_name_1 = "${ var.env }–${ var.project }"
-  VM_name_2 = "${ var.env }–${ var.project }"
+  vm_name_1 = "${ var.vm_netology }-develop-${ var.vm_web }-1"
+  vm_name_2 = "${ var.vm_netology }-develop-${ var.vm_db }-1"
 
 }

@@ -131,3 +131,20 @@ variable "vm_web_vms_ssh_root_key" {
   default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHYMl6i1/RbSwM3vsYIkgYPo+wrPcxc2aZ1AODdCqTPM root@dio-mainpc"
   description = "ssh-keygen -t ed25519"
 }
+
+###Name vars
+
+variable "vm_web" {
+  type        = string
+  default     = "web"
+}
+
+variable "vm_netology" {
+  type        = string
+  default     = "netology"
+}
+
+variable "vm_db" {
+  type        = string
+  default     = "db"
+}
