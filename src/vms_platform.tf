@@ -57,42 +57,42 @@ variable "vm_web_image_family" {
 
 ###Instance vars
 
-variable "vm_web_platform" {
-  type        = string
-  default     = "netology-develop-platform-web"
-}
+# variable "vm_web_platform" {
+#   type        = string
+#  default     = "web"
+# }
 
 variable "vm_web_platform_id" {
   type        = string
   default     = "standard-v3"
 }
 
-variable "vm_web_cores" {
-  type        = number
-  default     = 2
-}
+# variable "vm_web_cores" {
+#   type        = number
+#   default     = 2
+# }
 
-variable "vm_web_memory" {
-  type        = number
-  default     = 1
-}
+# variable "vm_web_memory" {
+#   type        = number
+#  default     = 1
+# }
 
-variable "vm_web_core_fraction" {
-  type        = number
-  default     = 20
-}
+# variable "vm_web_core_fraction" {
+#   type        = number
+#   default     = 20
+# }
 
-variable "vm_web_preemptible" {
-  type        = bool
-  default     = true
-}
+# variable "vm_web_preemptible" {
+#   type        = bool
+#   default     = true
+# }
 
 ###Instance vars
 
-variable "vm_db_platform" {
-  type        = string
-  default     = "netology-develop-platform-db"
-}
+#variable "vm_db_platform" {
+#  type        = string
+#  default     = "db"
+#}
 
 variable "vm_db_platform_id" {
   type        = string
@@ -104,33 +104,33 @@ variable "vm_db_zone" {
   default     = "ru-central1-b"
 }
 
-variable "vm_db_cores" {
-  type        = number
-  default     = 2
-}
+# variable "vm_db_cores" {
+#  type        = number
+# default     = 2
+# }
 
-variable "vm_db_memory" {
-  type        = number
-  default     = 2
-}
+#variable "vm_db_memory" {
+#  type        = number
+#  default     = 2
+#}
 
-variable "vm_db_core_fraction" {
-  type        = number
-  default     = 20
-}
+#variable "vm_db_core_fraction" {
+#  type        = number
+#  default     = 20
+#}
 
-variable "vm_db_preemptible" {
-  type        = bool
-  default     = true
-}
+#variable "vm_db_preemptible" {
+#  type        = bool
+#  default     = true
+#}
 
 ###ssh vars
 
-variable "vm_web_vms_ssh_root_key" {
-  type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHYMl6i1/RbSwM3vsYIkgYPo+wrPcxc2aZ1AODdCqTPM root@dio-mainpc"
-  description = "ssh-keygen -t ed25519"
-}
+#variable "vm_web_vms_ssh_root_key" {
+#  type        = string
+#  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHYMl6i1/RbSwM3vsYIkgYPo+wrPcxc2aZ1AODdCqTPM root@dio-mainpc"
+#  description = "ssh-keygen -t ed25519"
+#}
 
 ###Name vars
 

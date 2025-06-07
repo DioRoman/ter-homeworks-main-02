@@ -20,13 +20,13 @@ data "yandex_compute_image" "ubuntu" {
   family = var.vm_web_image_family
 }
 
-resource "yandex_compute_instance" "platform" {
+resource "yandex_compute_instance" "web" {
   name        = local.vm_name_1
   platform_id = var.vm_web_platform_id
   resources {
-    cores         = var.vm_web_cores
-    memory        = var.vm_web_memory
-    core_fraction = var.vm_web_core_fraction
+    cores         = var.vms_resources["web"].cores
+    memory        = var.vms_resources["web"].memory
+    core_fraction = var.vms_resources["web"].core_fraction
   }
   boot_disk {
     initialize_params {
@@ -34,7 +34,7 @@ resource "yandex_compute_instance" "platform" {
     }
   }
   scheduling_policy {
-    preemptible = var.vm_web_preemptible
+    preemptible = var.vms_resources["web"].preemptible
   }
   
   network_interface {
@@ -43,20 +43,20 @@ resource "yandex_compute_instance" "platform" {
   }
 
   metadata = {
-    serial-port-enable = 1
-    ssh-keys           = "ubuntu:${var.vm_web_vms_ssh_root_key}"
+    serial-port-enable = var.vms_metadata.serial-port-enable
+    ssh-keys           = "ubuntu:${var.vms_metadata.ssh-keys}"
   }
 }
 
-resource "yandex_compute_instance" "netology-develop-platform-db" {
+resource "yandex_compute_instance" "db" {
   name        = local.vm_name_2
   platform_id = var.vm_db_platform_id
   zone = var.vm_db_zone
   
   resources {
-    cores         = var.vm_db_cores
-    memory        = var.vm_db_memory
-    core_fraction = var.vm_db_core_fraction
+    cores         = var.vms_resources["db"].cores
+    memory        = var.vms_resources["db"].memory
+    core_fraction = var.vms_resources["db"].core_fraction
   }
   boot_disk {
     initialize_params {
@@ -64,7 +64,7 @@ resource "yandex_compute_instance" "netology-develop-platform-db" {
     }
   }
   scheduling_policy {
-    preemptible = var.vm_db_preemptible
+    preemptible = var.vms_resources["db"].preemptible
   }
 
   network_interface {
@@ -73,7 +73,7 @@ resource "yandex_compute_instance" "netology-develop-platform-db" {
   }
 
   metadata = {
-    serial-port-enable = 1
-    ssh-keys           = "ubuntu:${var.vm_web_vms_ssh_root_key}"
+    serial-port-enable = var.vms_metadata.serial-port-enable
+    ssh-keys           = "ubuntu:${var.vms_metadata.ssh-keys}"
   }
 }
