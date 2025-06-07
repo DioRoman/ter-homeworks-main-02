@@ -87,6 +87,11 @@ variable "vm_web_platform_id" {
 #   default     = true
 # }
 
+variable "vm_web_nat" {
+  type        = bool
+  default     = false
+}
+
 ###Instance vars
 
 #variable "vm_db_platform" {
@@ -102,6 +107,11 @@ variable "vm_db_platform_id" {
 variable "vm_db_zone" {
   type        = string
   default     = "ru-central1-b"
+}
+
+variable "vm_db_nat" {
+  type        = bool
+  default     = false
 }
 
 # variable "vm_db_cores" {
