@@ -18,10 +18,6 @@ resource "yandex_vpc_subnet" "develop-db" {
   route_table_id = yandex_vpc_route_table.rt.id
 }
 
-data "yandex_vpc_network" "net" {
-  folder_id = var.vm_web_folder_id
-  name      = var.vm_web_vpc_name
-}
 
 resource "yandex_vpc_gateway" "nat_gateway" {
   name = "gateway"

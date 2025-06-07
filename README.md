@@ -34,3 +34,9 @@ local.test_map.admin
 Напишите interpolation-выражение, результатом которого будет: "John is admin for production server based on OS ubuntu-20-04 with X vcpu, Y ram and Z virtual disks", используйте данные из переменных test_list, test_map, servers и функцию length() для подстановки значений.
 
 "${local.test_map["admin"]} is ${keys(local.test_map)[0]} for production server based on OS ${local.servers.develop["image"]} with ${local.servers.production["cpu"]} vcpu, ${local.servers.production["ram"]} ram and ${length(local.servers.production.disks)} virtual ${keys(local.servers.production)[3]}"
+
+Задание 8
+
+"${local.test_map["admin"]} is ${keys(local.test_map)[0]} for production server based on OS ${local.servers.develop["image"]} with ${local.servers.production["cpu"]} vcpu, ${local.servers.production["ram"]} ram and ${length(local.servers.production.disks)} virtual ${keys(local.servers.production)[3]}"
+
+var.test.dev1.ssh
